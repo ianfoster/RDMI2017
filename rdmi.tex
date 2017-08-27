@@ -241,11 +241,13 @@ The second pattern is concerned with
 the automation of mundane but critical tasks that relate to the acquisition 
 and dissemination of data from instruments, experimental facilities, and large-scale simulations.
 Its implementation uses many of the constructs applied in the MRDP pattern, but for a different purpose. User facilities that host instruments face the challenge of providing automated secure data management workflows to their users enabling them to access data they have collected when they need it, where they need it and in formats needed by their processing tools. 
-While data types and volumes, and duration of experiment may vary, instrument facilities ranging from campus core facilities that have sequencers or microscopes, to national facilities such as the light sources, have a common need for scalable secure data management solution. 
-With the facility operating round the clock, and beam time use as a key metric, operators of the facility need services and solutions that not only allows them to automate a large part of the data management workflow, but also provides them with a platform that can be extended and integrated with their local authentication and data flow systems.Current practices often require copying of the collected data into physical media that is then carried back to the user's home institution for analysis and sharing. 
+While data types and volumes, and duration of experiment may vary, instrument facilities ranging from campus core facilities that have sequencers or microscopes, to national facilities such as the light sources, have a common need for scalable secure data management solutions. 
+With the facility operating around the clock, and beam time use as a key metric, operators of the facility need services and solutions that not only allows them to automate a large part of the data management workflow, but also provides them with a platform that can be extended and integrated with their local authentication and data flow systems.Current practices often require copying of the collected data into physical media that is then carried back to the user's home institution for analysis and sharing. 
 This process is error prone and time consuming, and furthermore does not provide any timely feedback to the experiment such that users can improve the quality of data gathered while they are at the facility. 
 It also places the burden on the researchers to ensure integrity of the copied data, 
-and significantly increases the time to results from such experiments.The scalable data management platform leverages the high performance network at institutions, 
+and significantly increases the time to results from such experiments.
+
+% KC: what data management platform? is this what we are proposing? Or something that exists?The scalable data management platform leverages the high performance network at institutions, 
 science DMZ concepts and a platform for secure data sharing to deliver a solution that allows near-real time data access at high speeds, 
 while still providing fine grained access control permissions on the data. Data access is via DTNs that are directly connected to high bandwidth networks to allow efficient data transfer to and from these nodes. 
 Acquisition machines that gather data either share a file system with the DTNs or use automated internal transfers to move data to DTN-accessible storage.
@@ -315,7 +317,7 @@ A storage system is made accessible to Globus, and thus capable of high performa
 Globus Connect is offered in two versions: 
 Globus Connect Personal for single-user deployments (e.g., a laptop or PC) and Globus Connect Server for multi-userdeployments (e.g., a shared server or DTN). Globus Transfer capabilities provide high performance and reliable third party data transfer. 
 The Globus service manages the entire transfer process, including coordinating authentication at source and destination; establishing a high performance data channel using  the GridFTP protocol, with configuration optimized for transfer; ensuring data integrity by comparing source/destination checksums; and recovering from any errors during the transfer.  Globus, by default, enforces the data access permissions representedby the underlying system; however, it also allows these access decisions to be managed through the cloud service. In the latter mode, called Globus Sharing, users may associate user- or group-based access control lists (ACLs) with particular file paths. Globus checks and enforces these ACLs when other users attempt to read or write to those paths.Globus Auth provides identity and access management platform capabilities. It brokers authentication and authorization interactions between end-users, identity providers, resource servers (services), and clients (e.g., web, mobile, desktop, and command line applications, and other services). 
-It implements standard web protocols, such as OAuth 2 and OpenID Connect, that allow it to be integrated easily with external applications using standard client libraries. 
+It implements standard web protocols, such as OAuth 2.0 and OpenID Connect, that allow it to be integrated easily with external applications using standard client libraries. 
 These protocols enable third-party applications to authenticate users (using their preferred identity) directly with the chosen identity provider. Globus Auth then returns accesstokens that the third-party application can use to validate the user's identity and to perform actions on behalf of that user, within an agreed upon scope. Globus Auth implements an identity federation model via which diverse identities can be linked, and such that presentation of one identity may support authorization for the set of identities. Integration with Globus Groups supports group-based authorization using user-managed groups.
 
 \section*{Summary}
@@ -333,7 +335,7 @@ can simplify development, deployment, and operation.
 
 The two design patterns and three use cases that we present here
 illustrate how existing infrastructure (e.g., storage and compute provided by a research computing center) can be enhanced via the use of higher level ``building blocks'' provided by the Globus platform, including authentication and authorization, data access and transfer, and data publication and discovery. 
-Collectively, as these examples show, Globus capabilities address the entire data lifecycle: from data acquisition through to publication and archiving 
+Collectively, as these examples show, Globus capabilities address the entire data lifecycle: from data acquisition through to publication and archiving. 
 The widespread deployment of Globus services makes it straightforward to extend
 the reach of systems constructed with these patterns across campuses and institutions.
 
