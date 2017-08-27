@@ -210,7 +210,7 @@ RDA users continue to use their RDA login, search and discover datasets of inter
 The RDA portal processes the request, and places the data on a Globus shared endpoint on a DTN hosted and operated at NCAR. 
 The DTN is hosted on their Science DMZ, decoupled from the RDA portal, and configured and tuned for efficient data transfer. 
 Using Globus APIs to integrate this into their data distribution workflow, RDA manages permissions on the shared endpoint to ensure the processed data is available only to the user who requested it. The user is notified once the data is ready for transfer via Globus. With the RDA login integrated with Globus Auth, the users get single sign on across the portal and Globus for data access and transfer. The RDA services also monitor the data transfer activity to identify any issue and help in debugging them, and to determine if the user has downloaded the data made available. 
-Figure~\ref{fig:sizetime}, from Chard et al.~\cite{MBRDP}, show the diversity of data downloads
+Figure~\ref{fig:sizetime}, from Chard et al.~\cite{BMRDP}, show the diversity of data downloads
 performed by a working MRDP instance, and (on the right), the high performance that can be
 achieved when both source and destination operate appropriately configured DTNs. 
 
